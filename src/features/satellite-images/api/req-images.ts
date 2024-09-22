@@ -1,0 +1,1 @@
+// implementar a chamada a API e retornar as imagens
