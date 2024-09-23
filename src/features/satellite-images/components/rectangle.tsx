@@ -7,16 +7,10 @@ import {
 
 import type { Ref } from 'react';
 import { useMap } from '@vis.gl/react-google-maps';
+import { useFormContext } from 'react-hook-form';
 
-type RectangleEventProps = {
-    onDrag?: (e: google.maps.MapMouseEvent) => void;
-    onDragStart?: (e: google.maps.MapMouseEvent) => void;
-    onDragEnd?: (e: google.maps.MapMouseEvent) => void;
-    onBoundsChanged?: (b: ReturnType<google.maps.Rectangle['getBounds']>) => void;
-};
 
-export type RectangleProps = google.maps.RectangleOptions & RectangleEventProps;
-
+export type RectangleProps = google.maps.RectangleOptions
 export type RectangleRef = Ref<google.maps.Rectangle | null>;
 
 function useRectangle(props: RectangleProps) {
@@ -65,12 +59,28 @@ function useRectangle(props: RectangleProps) {
     return rectangle;
 }
 
-export default useRectangle;
-
 export const Rectangle = forwardRef((props: RectangleProps, ref: RectangleRef) => {
     const rectangle = useRectangle(props);
+    const { setValue } = useFormContext();
 
     useImperativeHandle(ref, () => rectangle.current);
+
+    useEffect(() => {
+        function getRectangleBounds(rectangle: google.maps.Rectangle) {
+            const bounds = rectangle.getBounds()
+            if (!bounds) return;
+
+            const SW = bounds?.getSouthWest();
+            const NE = bounds?.getNorthEast();
+
+            const bbox = `${SW.lng()},${SW.lat()},${NE.lng()},${NE.lat()}`;
+            setValue("bbox", bbox)
+        }
+
+        if (rectangle.current) {
+            rectangle.current.addListener('bounds_changed', () => getRectangleBounds(rectangle.current!))
+        }
+    }, [rectangle.current])
 
     return null;
 });

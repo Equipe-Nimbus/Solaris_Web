@@ -1,36 +1,9 @@
-import { useEffect } from "react";
 import { Map as GoogleMap, useMap, } from "@vis.gl/react-google-maps"
-import { useFormContext } from "react-hook-form";
 
 import { Rectangle } from "./rectangle";
 
-
 export function Map() {
-    const map = useMap();
-
-    // const rectangle = useRef(new google.maps.Rectangle()).current;
-
-
-    const { setValue } = useFormContext();
-
-    useEffect(() => {
-        function getMapBounds(map: google.maps.Map) {
-            const bounds = map.getBounds();
-            if (!bounds) return;
-
-            const SW = bounds?.getSouthWest();
-            const NE = bounds?.getNorthEast();
-
-            const bbox = `${SW.lng()},${SW.lat()},${NE.lng()},${NE.lat()}`;
-            setValue('bbox', bbox);
-        }
-
-        if (map) {
-            map.addListener('bounds_changed', () => getMapBounds(map));
-        }
-
-    }, [map, setValue]);
-
+    
     return (
         <GoogleMap
             style={{ width: '100%', height: '100vh' }}
@@ -48,7 +21,6 @@ export function Map() {
                 }}
                 draggable
                 editable
-                onBoundsChanged={(b) => console.log(b)}
             />
         </GoogleMap>
     )
