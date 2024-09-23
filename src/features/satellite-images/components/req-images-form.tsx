@@ -14,7 +14,7 @@ const reqImagesSchema = z.object({
 export type ReqImagesFormValues = z.infer<typeof reqImagesSchema>
 
 type ReqImagesFormProps = {
-    onSubmit: (data: ReqImagesFormValues) => void;      
+    onSubmit: (data: ReqImagesFormValues) => void;
 }
 
 const ReqImagesForm = ({ onSubmit }: ReqImagesFormProps) => {
