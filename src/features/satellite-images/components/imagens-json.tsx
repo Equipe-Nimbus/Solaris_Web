@@ -51,7 +51,6 @@ const GaleriaJson = () => {
       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
         {imagens.map((imageArray, index) => (
           <div key={index} className="relative">
-            {/* Aqui estamos assumindo que cada item do array imageArray contém a URL da imagem */}
             {imageArray.length > 0 && (
               <img
                 src={imageArray[0]}
