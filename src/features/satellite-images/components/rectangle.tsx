@@ -69,7 +69,7 @@ export const Rectangle = forwardRef((props: RectangleProps, ref: RectangleRef) =
         function getRectangleBounds(rectangle: google.maps.Rectangle) {
             const bounds = rectangle.getBounds()
             if (!bounds) return;
-
+            
             const SW = bounds?.getSouthWest();
             const NE = bounds?.getNorthEast();
 
@@ -80,6 +80,7 @@ export const Rectangle = forwardRef((props: RectangleProps, ref: RectangleRef) =
         if (rectangle.current) {
             rectangle.current.addListener('bounds_changed', () => getRectangleBounds(rectangle.current!))
         }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [rectangle.current])
 
     return null;

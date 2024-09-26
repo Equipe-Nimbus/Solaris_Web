@@ -6,7 +6,7 @@ const Error = ({ errorMessage }: ErrorProps) => {
     if (!errorMessage) return null;
 
     return (
-        <div>
+        <div className="text-small text-error">
             {errorMessage}
         </div>
     )       

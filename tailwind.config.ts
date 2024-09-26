@@ -50,7 +50,11 @@ const config: Config = {
         "heading3": "40px",
         "heading2": "50px",
         "heading1": "60px",
-        "button": "14px"
+        "button": "14px",
+        "mheadging4": "24px",
+        "mheading3": "28px",
+        "mheading2": "30px",
+        "mheading1": "40px",
       }
     },
   },

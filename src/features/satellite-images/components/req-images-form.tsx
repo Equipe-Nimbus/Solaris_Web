@@ -4,6 +4,7 @@ import { z } from "zod"
 
 import { Map } from "./map";
 import { Form, Input } from "@/components/ui/form";
+import { Button } from "@/components/ui/button";
 
 const reqImagesSchema = z.object({
     startDate: z.string().min(1, 'Obrigatório'),
@@ -20,37 +21,43 @@ type ReqImagesFormProps = {
 const ReqImagesForm = ({ onSubmit }: ReqImagesFormProps) => {
 
     return (
-        <div>
-            <Form
-                onSubmit={onSubmit}
-                schema={reqImagesSchema}
-            >
-                {({ register, formState }) => (
-                    <>
-                        <Input
-                            type="date"
-                            label="Data Início"
-                            registration={register('startDate')}
-                            error={formState.errors.startDate}
-                        />
-                        <Input
-                            type="date"
-                            label="Data Final"
-                            registration={register('endDate')}
-                            error={formState.errors.endDate}
-                        />
-                        <Input
-                            type="text"
-                            label="Bbox"
-                            registration={register('bbox')}
-                            error={formState.errors.bbox}
-                        />
-                        <button type="submit">Submit</button>
-                        <Map />
-                    </>
-                )}
-            </Form>
-        </div>
+        <Form
+            onSubmit={onSubmit}
+            schema={reqImagesSchema}
+            className="bg-neutral-700 flex flex-col px-4 py-3 rounded-lg gap-5"
+        >
+            {({ register, formState }) => (
+                <>
+                    <Input
+                        type="date"
+                        label="Data Início"
+                        registration={register('startDate')}
+                        error={formState.errors.startDate}
+                    />
+                    <Input
+                        type="date"
+                        label="Data Final"
+                        registration={register('endDate')}
+                        error={formState.errors.endDate}
+                    />
+                    <Input
+                        type="text"
+                        registration={register('bbox')}
+                        error={formState.errors.bbox}
+                        className="hidden"
+                    />
+                    <Map />
+                    <div className="flex justify-center">
+                        <Button
+                            variant="primary"
+                            type="submit"
+                        >
+                            Buscar Imagens
+                        </Button>
+                    </div>
+                </>
+            )}
+        </Form>
     );
 };
 

@@ -11,18 +11,18 @@ type FieldWrapperProps = {
 }
 
 export type FieldWrapperPassThroughProps = Omit<
-  FieldWrapperProps,
-  'className' | 'children'
+    FieldWrapperProps,
+    'className' | 'children'
 >;
 
 const FieldWrapper = ({ label, error, children }: FieldWrapperProps) => {
     return (
-        <div>
+        <div className="flex flex-col gap-2">
             <Label>
                 {label}
-                <div>{children}</div>
             </Label>
-            <Error errorMessage={error?.message}/>
+            <div>{children}</div>
+            <Error errorMessage={error?.message} />
         </div>
     )
 }

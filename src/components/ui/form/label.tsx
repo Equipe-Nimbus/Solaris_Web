@@ -5,7 +5,7 @@ const Label = React.forwardRef<HTMLLabelElement, React.LabelHTMLAttributes<HTMLL
     ({ className, ...props }, ref) => (
       <label
         ref={ref}
-        className={cnMerge(className)}
+        className={cnMerge(className, 'text-neutral-300 font-medium')}
         {...props}
       />
     )
