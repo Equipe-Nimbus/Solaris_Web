@@ -21,7 +21,7 @@ const GaleriaJson = () => {
 
     try {
       const response = await fetch(
-        `https://seu-backend.com/imagens?bbox=${bbox}&datetime=${datetime}`
+        `https://data.inpe.br/bdc/stac/v1/search?collections=CB4A-WPM-PCA-FUSED-1&bbox=${bbox}&datetime=${datetime}`
       );
       
       if (!response.ok) {
