@@ -9,7 +9,7 @@ VariantProps<typeof buttonVariants> & {
 }
 
 const buttonVariants = cva(
-    'w-full px-4 py-2 font-semibold rounded-md duration-300 text-button lg:w-fit',
+    'w-full px-4 py-2 font-semibold rounded-md duration-300 text-button',
     {
         variants: {
             variant: {

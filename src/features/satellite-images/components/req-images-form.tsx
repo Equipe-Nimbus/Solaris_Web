@@ -24,7 +24,7 @@ const ReqImagesForm = ({ onSubmit }: ReqImagesFormProps) => {
         <Form
             onSubmit={onSubmit}
             schema={reqImagesSchema}
-            className="bg-neutral-700 flex flex-col px-4 py-3 rounded-lg gap-5"
+            className="bg-neutral-700 flex flex-col px-10 py-5 rounded-lg gap-5"
         >
             {({ register, formState }) => (
                 <>
@@ -49,7 +49,7 @@ const ReqImagesForm = ({ onSubmit }: ReqImagesFormProps) => {
                     <Map />
                     <div className="flex justify-center">
                         <Button
-                            variant="primary"
+                            variant="outline"
                             type="submit"
                         >
                             Buscar Imagens
