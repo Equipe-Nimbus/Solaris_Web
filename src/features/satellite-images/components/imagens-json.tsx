@@ -29,7 +29,7 @@ const ImageGallery = () => {
       }
 
       const data: ImagemResponse = await response.json();
-      setImagens(data.imagens); // Salva o array de imagens no estado
+      setImagens(data.imagens);
     } catch (err) {
       setError((err as Error).message);
     } finally {
