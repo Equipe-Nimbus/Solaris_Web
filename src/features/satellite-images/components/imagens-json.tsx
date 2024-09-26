@@ -7,7 +7,7 @@ interface ImagemResponse {
   quantidadePagina: number;
 }
 
-const ImageGallery = () => {
+const GaleriaJson = () => {
   const [imagens, setImagens] = useState<string[][]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
@@ -56,7 +56,8 @@ const ImageGallery = () => {
               <img
                 src={imageArray[0]}
                 alt={`Imagem ${index + 1}`}
-                className="w-full h-auto object-cover"
+                className="w-full h-auto object-cover rounded shadow-lg"
+                loading="lazy"
               />
             )}
           </div>
@@ -66,4 +67,4 @@ const ImageGallery = () => {
   );
 };
 
-export default ImageGallery;
+export default GaleriaJson;
