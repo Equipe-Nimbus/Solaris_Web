@@ -1,5 +1,6 @@
 // import { useState } from "react";
 import { ReqImagesForm, ReqImagesFormValues } from "./req-images-form";
+import GaleriaJson from "./imagens-json";
 
 const ReqImageHandler = () => {
 
@@ -23,7 +24,7 @@ const ReqImageHandler = () => {
             </div>
             <ReqImagesForm onSubmit={handleSubmit} />
 
-            {/* implementar o componente que irá exibir as imagens */}
+            <GaleriaJson imagens={images}/>
         </div>
     )
 }
