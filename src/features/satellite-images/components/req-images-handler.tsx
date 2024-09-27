@@ -23,8 +23,6 @@ const ReqImageHandler = () => {
                 <p className="text-base text-neutral-300 lg:text-large">Selecione um intervalo de datas e uma área de interesse para visualizar imagens de satélite e identificar a cobertura de nuvens.</p>
             </div>
             <ReqImagesForm onSubmit={handleSubmit} />
-
-            <GaleriaJson imagens={images}/>
         </div>
     )
 }
