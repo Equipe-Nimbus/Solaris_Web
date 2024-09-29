@@ -24,7 +24,7 @@ const ReqImagesForm = ({ onSubmit }: ReqImagesFormProps) => {
         <Form
             onSubmit={onSubmit}
             schema={reqImagesSchema}
-            className="bg-neutral-700 flex flex-col px-10 py-5 rounded-lg gap-5"
+            className="bg-neutral-700 flex flex-col px-10 py-5 rounded-lg gap-5 border border-neutral-600"
         >
             {({ register, formState }) => (
                 <>

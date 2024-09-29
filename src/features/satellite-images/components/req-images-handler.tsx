@@ -1,10 +1,11 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { ReqImagesForm, ReqImagesFormValues } from "./req-images-form";
 import { reqImages } from "../api/req-images";
+import { ImageGrid } from "./image-grid";
+import { Spinner } from "@/components/ui/spinner/spinner";
 
 const ReqImageHandler = () => {
 
-    // estado para armazenar as imagens
     const [images, setImages] = useState<string[]>([]);
     const [isLoading, setIsLoading] = useState(false);
 
@@ -23,10 +24,8 @@ const ReqImageHandler = () => {
             });
     }
 
-    useEffect(() => { console.log(images) }, [images]);
-
     return (
-        <div>
+        <>
             <div className="py-10 flex flex-col gap-3">
                 <h1 className="text-neutral-100 text-mheading2 font-bold leading-10 lg:text-heading3">
                     Busca por imagens de
@@ -34,8 +33,15 @@ const ReqImageHandler = () => {
                 </h1>
                 <p className="text-base text-neutral-300 lg:text-large">Selecione um intervalo de datas e uma área de interesse para visualizar imagens de satélite e identificar a cobertura de nuvens.</p>
             </div>
-            <ReqImagesForm onSubmit={handleSubmit} />
-        </div>
+            <div className="flex flex-col gap-20">
+                <ReqImagesForm onSubmit={handleSubmit} />
+                {isLoading ? (
+                    <Spinner />
+                ) : (
+                    <ImageGrid imagens={images} />
+                )}
+            </div>
+        </>
     )
 }
 
