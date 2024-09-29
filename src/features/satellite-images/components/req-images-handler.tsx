@@ -1,17 +1,29 @@
-// import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ReqImagesForm, ReqImagesFormValues } from "./req-images-form";
-import GaleriaJson from "./imagens-json";
+import { reqImages } from "../api/req-images";
 
 const ReqImageHandler = () => {
 
     // estado para armazenar as imagens
-    // const [images, setImages] = useState([]);
+    const [images, setImages] = useState<string[]>([]);
+    const [isLoading, setIsLoading] = useState(false);
 
-    function handleSubmit(data: ReqImagesFormValues) {
-        console.log(data);
+    async function handleSubmit(data: ReqImagesFormValues) {
+        setIsLoading(true);
 
-        // implementar a chamada a API e atualizar o estado das imagens
+        await reqImages(data)
+            .then((response) => {
+                setImages(response.data);
+            })
+            .catch((error) => {
+                console.log(error);
+            })
+            .finally(() => {
+                setIsLoading(false);
+            });
     }
+
+    useEffect(() => { console.log(images) }, [images]);
 
     return (
         <div>
