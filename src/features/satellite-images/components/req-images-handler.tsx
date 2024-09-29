@@ -3,24 +3,28 @@ import { ReqImagesForm, ReqImagesFormValues } from "./req-images-form";
 import { reqImages } from "../api/req-images";
 import { ImageGrid } from "./image-grid";
 import { Spinner } from "@/components/ui/spinner/spinner";
+import { SatelliteImage } from "@/types/types";
 
 const ReqImageHandler = () => {
 
-    const [images, setImages] = useState<string[]>([]);
+    const [images, setImages] = useState<SatelliteImage[]>([]);
     const [isLoading, setIsLoading] = useState(false);
+    const [hasSearched, setHasSearched] = useState(false);
 
     async function handleSubmit(data: ReqImagesFormValues) {
         setIsLoading(true);
 
         await reqImages(data)
             .then((response) => {
-                setImages(response.data);
+                console.log(response.data);
+                setImages(response.data.imagensCombinadas);
             })
             .catch((error) => {
                 console.log(error);
             })
             .finally(() => {
                 setIsLoading(false);
+                setHasSearched(true);
             });
     }
 
@@ -38,7 +42,7 @@ const ReqImageHandler = () => {
                 {isLoading ? (
                     <Spinner />
                 ) : (
-                    <ImageGrid imagens={images} />
+                    <ImageGrid imagens={images} hasSearched={hasSearched}/>
                 )}
             </div>
         </>
