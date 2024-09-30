@@ -7,13 +7,14 @@ const config: Config = {
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/features/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     extend: {
       colors: {
-        neutral: {
+        primary: {
           100: "#FFF2D4",
-          "100-10%": "hsla(40, 100%, 92%, 0.1)",
+          "100-10%": "hsla(42, 100%, 92%, 0.1)",
           200: "#FFE2A8",
           300: "#FFCB70",
           400: "#FFA937",
@@ -22,20 +23,21 @@ const config: Config = {
           700: "#C75607",
           800: "#9E440E",
         },
-        primary: {
-          100: "#E6F6FF",
-          200: "#BAE3FF",
-          300: "#7CC4FA",
-          400: "#47A3F3",
-          500: "#2186EB",
-          600: "#0967D2",
-          700: "#0552B5",
-          800: "#03449E",
+        neutral: {
+          100: "#F5F5F5",
+          200: "#E5E5E5",
+          300: "#D4D4D4",
+          '300-40%': "hsla(0, 0%, 83%, 0.4)",
+          400: "#A3A3A3",
+          500: "#737373",
+          600: "#404040",
+          700: "#171717",
+          800: "#0A0A0A",
         },
-        accent: "F03906",
-        success: "22C55E",
-        error: "DC2626",
-        warning: "FFCE52",
+        accent: "#F03906",
+        success: "#22C55E",
+        error: "#DC2626",
+        warning: "#FFCE52",
       },
       fontFamily: {
         sans: ['Inter', ...defaultTheme.fontFamily.sans],
@@ -48,7 +50,11 @@ const config: Config = {
         "heading3": "40px",
         "heading2": "50px",
         "heading1": "60px",
-        "button": "14px"
+        "button": "14px",
+        "mheadging4": "24px",
+        "mheading3": "28px",
+        "mheading2": "30px",
+        "mheading1": "40px",
       }
     },
   },
