@@ -9,7 +9,8 @@ interface ImagemResponse {
   hasSearched?: boolean;
 }
 
-const ImageGrid = ({ imagens, hasSearched }: ImagemResponse) => {
+const ImageGrid = ({ imagens = [], hasSearched }: ImagemResponse) => {
+  console.log(imagens);
   const [isMaskVisible, setMaskVisible] = useState<boolean[]>(new Array(imagens.length).fill(false));
 
   function toggleMaskVisibility(index: number) {
