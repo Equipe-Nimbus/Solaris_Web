@@ -6,7 +6,7 @@ const Login = () => {
             <div className="w-full max-w-4xl flex">
                 <div className="w-1/2 bg-black flex flex-col justify-center items-center p-10">
                     <div className="text-left">
-                        <img src="/assets/logo.svg" alt="Solaris Logo" className="w-32 mb-4" />
+                        <img src="/public/logo.svg" alt="Solaris Logo" className="w-32 mb-4" />
                     </div>
                 </div>
 
