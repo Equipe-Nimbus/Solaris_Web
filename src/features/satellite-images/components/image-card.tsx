@@ -6,6 +6,7 @@ import { SvgImage } from "@/components/ui/svgImage";
 
 import { ArrowsOutSimple } from "@phosphor-icons/react";
 import { Modal, ModalContent } from "@/components/ui/modal";
+import { Checkbox } from "@/components/ui/checkbox/checkbox";
 
 type ImageCardProps = {
     imagemOriginal: string;
@@ -59,10 +60,12 @@ const ImageCard = ({ imagemOriginal, imagemProcessada }: ImageCardProps) => {
                             className={`absolute top-0 left-0 w-full h-full object-contain ${isMaskVisible ? 'opacity-100' : 'opacity-0'}`}
                         />
                     </div>
-                    <div className="flex flex-col">
+                    <div className="flex flex-col gap-2">
                         <h2 className="text-large text-neutral-100">Visualização</h2>
-                        <input type="checkbox" onChange={() => setImageVisible(prevState => !prevState)}/>
-                        <input type="checkbox" onChange={() => setMaskVisible(prevState => !prevState)}/>
+                        <div className="flex gap-6">
+                            <Checkbox checked={isImageVisible} onChange={() => setImageVisible(prev => !prev)} label="Original"/>                        
+                            <Checkbox checked={isMaskVisible} onChange={() => setMaskVisible(prev => !prev)} label="Nuvem"/>
+                        </div>
                     </div>
 
                 </ModalContent>
