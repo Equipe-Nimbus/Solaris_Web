@@ -13,7 +13,7 @@ const Checkbox = ({ checked, onChange, label }: CheckboxProps) => {
                 onChange={onChange} 
                 className="appearance-none w-4 h-4 border-2 border-primary-500 rounded checked:bg-primary-500 checked:border-primary-500 focus:outline-none cursor-pointer"
             /> 
-            {label && <span className="text-base text-neutral-100">{label}</span>}
+            {label && <span className="text-base text-neutral-300">{label}</span>}
         </label>
     )
 }
