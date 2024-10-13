@@ -20,8 +20,7 @@ const ImageGrid = ({ imagens = [], hasSearched }: ImagemResponse) => {
         {imagens.map((imagem, index) => (
           <ImageCard
             key={index}
-            imagemOriginal={imagem.imagemOriginal}
-            imagemProcessada={imagem.imagemProcessada}
+            imagem={imagem}
           />
         ))}
       </div>
