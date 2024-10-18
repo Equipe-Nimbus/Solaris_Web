@@ -7,6 +7,7 @@ export const api = Axios.create({
 export const endpoints = {
     auth: {
         register: "/usuarios",
+        login: "/login",
     },
     images: {
         req: "/imagens"
