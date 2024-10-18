@@ -1,6 +1,6 @@
 import { AxiosResponse } from "axios";
 import { ReqImagesFormValues } from "../components/req-images-form";
-import { api } from "@/lib/api-client";
+import { api, endpoints } from "@/lib/api-client";
 import { fDate } from "@/utils/fDate";
 import { SatelliteImage } from "@/types/types";
 
@@ -10,7 +10,7 @@ export async function reqImages(formValues: ReqImagesFormValues): Promise<AxiosR
         const fStartDate = fDate(startDate);
         const fEndDate = fDate(endDate);
     
-        const response = await api.get<{ imagens: SatelliteImage[]}>('/imagens', {
+        const response = await api.get<{ imagens: SatelliteImage[]}>(endpoints.images.req, {
             params: {
                 datetime: `${fStartDate}/${fEndDate}`,
                 bbox: bbox
