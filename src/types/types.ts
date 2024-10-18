@@ -5,3 +5,14 @@ export type SatelliteImage = {
     bbox: number[];
     mascara: string;
 }
+
+export type User = {
+    id: number;
+    nome_user: string;
+}
+
+export type AuthResponse = {
+    id: number;
+    nome_user: string;
+    token: string;
+}   
