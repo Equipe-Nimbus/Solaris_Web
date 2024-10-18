@@ -1,6 +1,10 @@
-import { BaseEntity } from "@/types/types";
-import { cnMerge } from "@/utils/cnMerge";
 import React from "react";
+
+import { BaseEntity } from "@/types/types";
+
+import { cnMerge } from "@/utils/cnMerge";
+
+import { CalendarSlash } from "@phosphor-icons/react/dist/ssr";
 
 const TableElement = React.forwardRef<
     HTMLTableElement,
@@ -118,6 +122,15 @@ type TableProps<T> = {
 }
 
 export default function Table<T extends BaseEntity>({ data, columns }: TableProps<T>) {
+
+    if (!data?.length) {
+        return (
+            <div className="flex h-96 flex-col items-center justify-center text-neutral-500">
+                <CalendarSlash className="size-16"/> 
+                <span>Nenhuma requisição encontrada</span>
+            </div>
+        )
+    }
     return (
         <>
             <TableElement>
