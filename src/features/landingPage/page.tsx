@@ -28,13 +28,13 @@ export default function LandingPage() {
                     </Link>
                 </div>
                 <div className="flex flex-col gap-6 py-10">
-                    <h1 className="font-black text-white text-4xl">O que é Solaris?</h1>
+                    <h1 className="font-black text-center text-white text-4xl">O que é Solaris?</h1>
                     <div className="flex flex-col gap-4 max-w-3xl">
                         <p className="font-bold text-white text-justify">O projeto Solaris é uma solução avançada para mapeamento de nuvens e as sombras delas com imagens em forma de satélite, desenvolvida com a finalidade de fornecer análises e automáticas. Utilizando tecnologia de segmentação de imagem com Inteligência Artificial, Solaris é capaz de identificar e, com isso, mapear áreas cobertas por nuvens e suas sombras com alto nível de detalhe e confiabilidade.</p>
                     </div>
                 </div>
                 <div className="flex flex-col gap-6 py-10">
-                    <h2 className="font-black text-white text-4xl">Quais as suas Funcionalidades?</h2>
+                    <h2 className="font-black text-center text-white text-4xl">Quais as suas Funcionalidades?</h2>
                     <div className="flex flex-col gap-4 max-w-3xl">
                         <p className="font-bold text-white text-justify">.Segmentação Precisa dos diferentes tipos de imagens de satélite das nuvens e sombras;
                             <br />
@@ -46,13 +46,13 @@ export default function LandingPage() {
                     </div>
                 </div>
                 <div className="flex flex-col gap-6 py-10">
-                    <h3 className="font-black text-white text-4xl">Qual a Importância do mapeamento?</h3>
+                    <h3 className="font-black text-center text-white text-4xl">Qual a Importância do mapeamento?</h3>
                     <div className="flex flex-col gap-4 max-w-3xl">
                         <p className="font-bold text-white text-justify">A presença de nuvens nas imagens de satélites poderá comprometer a analise de dados muito importantes para a agricultura, monitoramento ambiental e, consequentemente, o planejamento urbano. Com o projeto Solaris, você consegue obter resultados claros e utilizáveis, removendo qualquer impacto negativo das nuvens sobre os dados analisados. </p>
                     </div>
                 </div>
                 <div className="flex flex-col gap-6 py-10">
-                    <h4 className="font-black text-white text-4xl">Quais são seus Benefícios?</h4>
+                    <h4 className="font-black text-center text-white text-4xl">Quais são seus Benefícios?</h4>
                     <div className="flex flex-col gap-4 max-w-3xl">
                         <p className="font-bold text-white text-justify">.Melhora na Qualidade dos dados para projetos ambientais, agrícolas e de monitoramentos urbanos;
                             <br />
