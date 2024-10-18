@@ -16,8 +16,8 @@ const ReqImageHandler = () => {
 
         await reqImages(data)
             .then((response) => {
-                console.log(response.data);
-                setImages(response.data.imagensCombinadas);
+                // console.log(response.data);
+                setImages(response.data.imagens);
             })
             .catch((error) => {
                 console.log(error);
