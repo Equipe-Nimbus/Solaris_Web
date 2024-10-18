@@ -1,10 +1,8 @@
 import LoginView from '@/features/auth/components/login-view';
 import React from 'react';
 
-const LoginPage: React.FC = () => {
+export default function LoginPage() {
     return (
         <LoginView />
     );
 };
-
-export default LoginPage;
