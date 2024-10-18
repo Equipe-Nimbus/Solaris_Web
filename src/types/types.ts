@@ -1,4 +1,7 @@
 export type SatelliteImage = {
-    imagemOriginal: string;
-    imagemProcessada: string;   
+    thumbnail: string;
+    tiff: string;
+    data: string;
+    bbox: number[];
+    mascara: string;
 }
