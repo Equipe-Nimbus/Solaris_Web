@@ -6,6 +6,11 @@ export type SatelliteImage = {
     mascara: string;
 }
 
+export type User = {
+    id: number;
+    nome_user: string;
+}
+
 export type AuthResponse = {
     id: number;
     nome_user: string;

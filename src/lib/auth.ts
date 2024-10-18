@@ -1,7 +1,9 @@
 import z from 'zod';
+import Cookies from 'js-cookie';
+
 import { api, endpoints } from './api-client';
 import { AxiosResponse } from 'axios';
-import { AuthResponse } from '@/types/types';
+import { AuthResponse, User } from '@/types/types';
 
 export const registerSchema = z.object({
     nome_user: z.string().min(3, { message: 'Nome deve ter no mínimo 3 caracteres' }),
@@ -31,8 +33,14 @@ export const auth = {
             const res = await api.post<AuthResponse>(endpoints.auth.login, data)
 
             const { id, nome_user, token } = res.data
-            sessionStorage.setItem('user', JSON.stringify({ id, nome_user }))
-            sessionStorage.setItem('token', token)
+            Cookies.set(
+                'user',
+                JSON.stringify({ id, nome_user }),
+                {
+                    expires: 1/24, // 1 hora
+                    sameSite: 'strict'
+                }
+            )
             api.defaults.headers['Authorization'] = `Bearer ${token}`
 
             return res
@@ -41,13 +49,11 @@ export const auth = {
         }
     },
     logout: () => {
-        sessionStorage.removeItem('user')
-        sessionStorage.removeItem('token')
-
+        Cookies.remove('user')
         delete api.defaults.headers['Authorization']
     },
-    getUser: () => {
-        const user = sessionStorage.getItem('user')
+    getUser: (): User => {
+        const user = Cookies.get('user')
         return user ? JSON.parse(user) : null
     }
 }
