@@ -27,8 +27,11 @@ export async function reqImages(formValues: ReqImagesFormValues): Promise<AxiosR
 export async function getRequests(): Promise<ImagesRequestList[]> {
     try {
         const { id: userId } = auth.getUser();
-        const url = `${endpoints.requests.list}?id_user=${userId}`;
-        const res = await api.get<ImagesRequestList[]>(url);
+        const res = await api.get<ImagesRequestList[]>(endpoints.requests.list, {
+            params: {
+                id_user: userId
+            }
+        });
 
         return res.data || [];
     } catch (error) {
