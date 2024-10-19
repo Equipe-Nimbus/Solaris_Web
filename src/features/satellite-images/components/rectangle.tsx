@@ -61,27 +61,30 @@ function useRectangle(props: RectangleProps) {
 
 export const Rectangle = forwardRef((props: RectangleProps, ref: RectangleRef) => {
     const rectangle = useRectangle(props);
-    const { setValue } = useFormContext();
+    const formContext = useFormContext();
+    const setValue = formContext?.setValue;
 
     useImperativeHandle(ref, () => rectangle.current);
 
     useEffect(() => {
         function getRectangleBounds(rectangle: google.maps.Rectangle) {
-            const bounds = rectangle.getBounds()
+            const bounds = rectangle.getBounds();
             if (!bounds) return;
-            
-            const SW = bounds?.getSouthWest();
-            const NE = bounds?.getNorthEast();
+
+            const SW = bounds.getSouthWest();
+            const NE = bounds.getNorthEast();
 
             const bbox = `${SW.lng()},${SW.lat()},${NE.lng()},${NE.lat()}`;
-            setValue("bbox", bbox)
+            if (setValue) {
+                setValue("bbox", bbox);
+            }
         }
 
         if (rectangle.current) {
-            rectangle.current.addListener('bounds_changed', () => getRectangleBounds(rectangle.current!))
+            rectangle.current.addListener('bounds_changed', () => getRectangleBounds(rectangle.current!));
         }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [rectangle.current])
+    }, [rectangle.current, setValue]);
 
     return null;
 });

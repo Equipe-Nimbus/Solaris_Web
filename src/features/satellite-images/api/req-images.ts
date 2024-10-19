@@ -2,7 +2,7 @@ import { AxiosResponse } from "axios";
 import { ReqImagesFormValues } from "../components/req-images-form";
 import { api, endpoints } from "@/lib/api-client";
 import { fDateToServer } from "@/utils/fDate";
-import { ImagesRequestList, SatelliteImage } from "@/types/types";
+import { ImagesRequest, ImagesRequestList, SatelliteImage } from "@/types/types";
 import { auth } from "@/lib/auth";
 
 export async function reqImages(formValues: ReqImagesFormValues): Promise<AxiosResponse<{ imagens: SatelliteImage[]}>> {
@@ -36,6 +36,20 @@ export async function getRequests(): Promise<ImagesRequestList[]> {
         });
 
         return res.data || [];
+    } catch (error) {
+        throw error;
+    }
+}
+
+export async function getRequestById(id: string | number): Promise<ImagesRequest> {
+    try {
+        const res = await api.get<ImagesRequest>(endpoints.requests.listOne, {
+            params: {
+                id_requisicao: id
+            }
+        });
+
+        return res.data;
     } catch (error) {
         throw error;
     }

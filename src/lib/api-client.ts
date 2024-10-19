@@ -13,6 +13,7 @@ export const endpoints = {
         req: "/imagens"
     },
     requests: {
-        list: "/"
+        list: "/",
+        listOne: "/",
     }
 }

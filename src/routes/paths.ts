@@ -11,6 +11,7 @@ export const paths = {
     },
     requests: {
         new: `${ROOTS.requests}/new`,
-        list: `${ROOTS.requests}/list`, 
+        list: `${ROOTS.requests}/list`,
+        view: (id: string | number) => `${ROOTS.requests}/${id}`,
     }
 }

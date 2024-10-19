@@ -1,15 +1,19 @@
 'use client';
 
 import Table from "@/components/ui/table/table";
+import { paths } from "@/routes/paths";
 import { ImagesRequestList } from "@/types/types";
 import { fDate } from "@/utils/fDate";
 import { Circle, Eye } from "@phosphor-icons/react";
+import { useRouter } from "next/navigation";
 
 type RequestsTableProps = {
     requests: ImagesRequestList[];  
 }
 
 const RequestsTable = ({ requests }: RequestsTableProps) => {
+    const router = useRouter();
+
     return (
         <Table 
             data={requests}
@@ -51,7 +55,7 @@ const RequestsTable = ({ requests }: RequestsTableProps) => {
                         <Eye 
                             weight="fill" 
                             className="size-5 text-neutral-600 cursor-pointer hover:text-neutral-500 transition-colors"
-                            onClick={() => console.log(entry.id_requisicao)}
+                            onClick={() => router.push(paths.requests.view(entry.id_requisicao))}
                         />
                     )
                 }

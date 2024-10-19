@@ -52,3 +52,13 @@ export const REQUESTS_MOCK: ImagesRequestList[] = [
         status_requisicao: false
     }
 ];
+
+export const REQUEST_MOCK = {
+    id_requisicao: "req1",
+    data_requisicao: "2021-10-01T00:00:00Z",
+    bbox_requisicao: [-50.449219, -20.303418, -43.242188, -15.114553],
+    status_requisicao: true,
+    tempo_inicio_requisicao: "2021-10-01T00:00:00Z",
+    tempo_final_requisicao: "2021-10-01T00:00:00Z",
+    imagens: []
+}

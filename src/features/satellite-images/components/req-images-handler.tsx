@@ -1,3 +1,5 @@
+'use client';
+
 import { useState } from "react";
 import { ReqImagesForm, ReqImagesFormValues } from "./req-images-form";
 import { reqImages } from "../api/req-images";
@@ -10,7 +12,7 @@ import { LoadingCard } from "@/components/ui/loading";
 const ReqImageHandler = () => {
 
     const [images, setImages] = useState<SatelliteImage[]>([]);
-    const [isLoading, setIsLoading] = useState(true);
+    const [isLoading, setIsLoading] = useState(false);
     const [hasSearched, setHasSearched] = useState(false);
 
     async function handleSubmit(data: ReqImagesFormValues) {
