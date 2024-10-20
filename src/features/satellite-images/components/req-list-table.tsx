@@ -37,7 +37,7 @@ const RequestsTable = ({ requests }: RequestsTableProps) => {
                             {entry.status_requisicao ? (
                                 <>
                                     <Circle weight="fill" className="size-3 text-success"/>
-                                    <span className="font-semibold text-success">CONCLUÍDO</span>
+                                    <span className="font-semibold text-success">CONCLUÍDA</span>
                                 </>
                             ) : (
                                 <>

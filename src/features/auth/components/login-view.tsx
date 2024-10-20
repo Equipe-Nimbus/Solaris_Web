@@ -10,7 +10,7 @@ export default function LoginView() {
             <LoginForm />
             <span className='text-small text-neutral-400'>
                 Não possui uma conta?{' '}
-                <Link href="/auth/login" className='text-small text-primary-500 hover:text-primary-600 hover:underline'>Cadastrar</Link>
+                <Link href="/auth/register" className='text-small text-primary-500 hover:text-primary-600 hover:underline'>Cadastrar</Link>
             </span>
         </div>
     );
