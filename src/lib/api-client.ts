@@ -13,7 +13,7 @@ export const endpoints = {
         req: "/imagens"
     },
     requests: {
-        list: "/",
+        list: (id: number ) => `/requisicao/${id}`,
         listOne: "/",
     }
 }
