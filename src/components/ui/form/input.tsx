@@ -17,7 +17,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
             <FieldWrapper label={label} error={error}>
                 <input
                     type={type}
-                    className={cnMerge(className, 'w-full bg-neutral-800 text-neutral-400 px-4 py-1 rounded-lg focus:border focus:border-primary-500 focus:outline-none focus:ring-0', disabled ? 'bg-neutral-600' : '')}
+                    className={cnMerge(className, 'w-full bg-neutral-600/30 text-neutral-100 px-4 py-2 rounded-lg focus:border focus:border-primary-500 focus:outline-none focus:ring-0', disabled ? 'bg-neutral-600' : '')}
                     ref={ref}
                     disabled={disabled}
                     {...registration}

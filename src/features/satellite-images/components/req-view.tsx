@@ -11,13 +11,16 @@ import Link from "next/link";
 import { ImageGrid } from "./image-grid";
 import { fDate } from "@/utils/fDate";
 import { Circle } from "@phosphor-icons/react";
+import { getRequestById } from "../api/req-images";
+import { useNotifications } from "@/components/ui/notifications";
 
 type RequestViewProps = {
-    requestId: string | number;
+    requestId: string;
 }
 
 const RequestView = ({ requestId }: RequestViewProps) => {
-    const [request] = useState<ImagesRequest>(REQUEST_MOCK);
+    const [request, setRequest] = useState<ImagesRequest>(REQUEST_MOCK);
+    const { addNotification } = useNotifications();
 
     const bounds = {
         west: request.bbox_requisicao[0],
@@ -28,8 +31,19 @@ const RequestView = ({ requestId }: RequestViewProps) => {
 
 
     useEffect(() => {
-        // utilizar a função getRequestById para buscar a requisição pelo id
-    }, [requestId])
+        getRequestById(requestId)
+            .then((response) => {
+                setRequest(response)
+            })
+            .catch((error) => {
+                addNotification({
+                    title: 'Erro ao carregar requisição',
+                    message: 'Não foi possível carregar a requisição solicitada.',
+                    type: 'error'
+                })
+                console.log(error);
+            });
+    }, [requestId, addNotification])
 
     return (
         <>

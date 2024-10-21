@@ -62,6 +62,7 @@ export function RegisterForm() {
                             error={formState.errors.senha_user}
                         />
                         <Button
+                            className='mt-5'
                             variant="primary"
                             type="submit"
                         >
