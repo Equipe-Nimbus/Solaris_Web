@@ -38,13 +38,9 @@ export async function getRequests(): Promise<ImagesRequestList[]> {
     }
 }
 
-export async function getRequestById(id: string | number): Promise<ImagesRequest> {
+export async function getRequestById(id: string ): Promise<ImagesRequest> {
     try {
-        const res = await api.get<ImagesRequest>(endpoints.requests.listOne, {
-            params: {
-                id_requisicao: id
-            }
-        });
+        const res = await api.get<ImagesRequest>(endpoints.requests.listOne(id));
 
         return res.data;
     } catch (error) {

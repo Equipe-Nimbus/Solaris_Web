@@ -14,6 +14,6 @@ export const endpoints = {
     },
     requests: {
         list: (id: number ) => `/requisicao/${id}`,
-        listOne: "/",
+        listOne: (id: string) => `/requisicao/historico/${id}`,
     }
 }
