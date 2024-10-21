@@ -33,7 +33,7 @@ export function LoginForm() {
     }
 
     return (
-        <div className='bg-neutral-700 flex flex-col px-10 py-10 rounded-lg gap-5 border border-neutral-600 md:min-w-96'>
+        <div className='bg-neutral-700/70 flex flex-col px-10 py-10 rounded-lg gap-5 border border-neutral-600 md:min-w-96'>
             <h2 className='text-large text-neutral-100 font-semibold'>Login</h2>
             <Form
                 onSubmit={handleLogin}
@@ -55,6 +55,7 @@ export function LoginForm() {
                             error={formState.errors.senha_user}
                         />
                         <Button
+                            className='mt-5'
                             variant="primary"
                             type="submit"
                         >

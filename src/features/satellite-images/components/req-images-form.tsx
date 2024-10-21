@@ -24,7 +24,7 @@ const ReqImagesForm = ({ onSubmit }: ReqImagesFormProps) => {
         <Form
             onSubmit={onSubmit}
             schema={reqImagesSchema}
-            className="bg-neutral-700 flex flex-col px-10 py-10 rounded-lg gap-5 border border-neutral-600"
+            className="bg-neutral-700/70 flex flex-col p-4 rounded-lg gap-5 border border-neutral-600 sm:p-10"
         >
             {({ register, formState }) => (
                 <>
@@ -33,12 +33,14 @@ const ReqImagesForm = ({ onSubmit }: ReqImagesFormProps) => {
                         label="Data Início"
                         registration={register('startDate')}
                         error={formState.errors.startDate}
+                        className="max-w-[400px]"
                     />
                     <Input
                         type="date"
                         label="Data Final"
                         registration={register('endDate')}
                         error={formState.errors.endDate}
+                        className="max-w-[400px]"
                     />
                     <Input
                         type="text"
@@ -47,7 +49,7 @@ const ReqImagesForm = ({ onSubmit }: ReqImagesFormProps) => {
                         className="hidden"
                     />
                     <Map />
-                    <div className="flex justify-center">
+                    <div className="flex justify-center mt-10">
                         <Button
                             variant="outline"
                             type="submit"
