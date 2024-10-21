@@ -32,7 +32,7 @@ const ReqListView = () => {
     return (
         <div className="flex flex-col gap-4 justify-center">
             <div className="flex justify-between items-center py-4 mt-10">
-                <h1 className="text-neutral-300 font-semibold">Requisições anteriores</h1>
+                <h1 className="text-neutral-300 font-semibold">Consultas anteriores</h1>
                 <Link href={paths.requests.new}>
                     <Button
                         variant="primary"
