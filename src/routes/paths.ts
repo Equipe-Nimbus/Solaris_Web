@@ -1,6 +1,7 @@
 const ROOTS = {
     auth: '/auth',
     app: '/app',
+    requests: '/app/requests',
 }
 
 export const paths = {
@@ -8,7 +9,9 @@ export const paths = {
         login: `${ROOTS.auth}/login`,
         register: `${ROOTS.auth}/register`,
     },
-    app: {
-        reqMap: `${ROOTS.app}/reqMap`,
+    requests: {
+        new: `${ROOTS.requests}/new`,
+        list: `${ROOTS.requests}/list`,
+        view: (id: string | number) => `${ROOTS.requests}/${id}`,
     }
 }

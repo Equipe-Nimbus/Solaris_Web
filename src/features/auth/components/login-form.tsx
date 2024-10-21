@@ -17,7 +17,7 @@ export function LoginForm() {
     async function handleLogin(data: LoginFormValues) {
         await auth.login(data)
             .then(() => {
-                router.replace(paths.app.reqMap);
+                router.replace(paths.requests.new);
                 addNotification({
                     type: 'success',
                     title: 'Login bem-sucedido!'

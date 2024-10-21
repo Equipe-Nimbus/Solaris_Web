@@ -2,7 +2,7 @@
 const nextConfig = {
     reactStrictMode: true,
     images: {
-        domains: ['data.inpe.br'],
+        domains: ['data.inpe.br', 'localhost'],
     }
 };
 

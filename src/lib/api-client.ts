@@ -12,4 +12,8 @@ export const endpoints = {
     images: {
         req: "/imagens"
     },
+    requests: {
+        list: (id: number ) => `/requisicao/${id}`,
+        listOne: "/",
+    }
 }
