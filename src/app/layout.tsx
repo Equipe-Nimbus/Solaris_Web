@@ -1,6 +1,8 @@
-import type { Metadata } from "next";
 import "@/styles/globals.css";
-import { ContentLayout } from "@/components/layout/content-layout";
+
+import type { Metadata } from "next";
+
+import { AppProvider } from "./provider";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -14,9 +16,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <ContentLayout>
-        {children}
-      </ContentLayout>
+      <body className="antialised">
+        <AppProvider>{children}</AppProvider>
+      </body>
     </html>
   );
 }

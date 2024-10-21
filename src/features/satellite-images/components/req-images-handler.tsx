@@ -1,9 +1,13 @@
+'use client';
+
 import { useState } from "react";
 import { ReqImagesForm, ReqImagesFormValues } from "./req-images-form";
 import { reqImages } from "../api/req-images";
 import { ImageGrid } from "./image-grid";
-import { Spinner } from "@/components/ui/spinner/spinner";
 import { SatelliteImage } from "@/types/types";
+import Link from "next/link";
+import { paths } from "@/routes/paths";
+import { LoadingCard } from "@/components/ui/loading";
 
 const ReqImageHandler = () => {
 
@@ -40,9 +44,18 @@ const ReqImageHandler = () => {
             <div className="flex flex-col gap-20">
                 <ReqImagesForm onSubmit={handleSubmit} />
                 {isLoading ? (
-                    <Spinner />
+                    <LoadingCard
+                        title="Processando suas imagens..."
+                    >
+                        <span className="max-w-[400px] text-center text-neutral-400">
+                            Isso pode levar algum tempo. Você pode retornar a qualquer momento e verificar o status da sua requisição nas suas{' '}
+                            <Link href={paths.requests.list} className="text-primary-500">
+                                requisições anteriores.
+                            </Link>
+                        </span>
+                    </LoadingCard>
                 ) : (
-                    <ImageGrid imagens={images} hasSearched={hasSearched}/>
+                    <ImageGrid imagens={images} hasSearched={hasSearched} />
                 )}
             </div>
         </>

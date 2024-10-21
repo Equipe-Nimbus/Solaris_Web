@@ -17,10 +17,8 @@ export type FieldWrapperPassThroughProps = Omit<
 
 const FieldWrapper = ({ label, error, children }: FieldWrapperProps) => {
     return (
-        <div className="flex flex-col gap-2">
-            <Label>
-                {label}
-            </Label>
+        <div className="flex flex-col gap-2 text-small">
+            {label && <Label>{label}</Label>}
             <div>{children}</div>
             <Error errorMessage={error?.message} />
         </div>
