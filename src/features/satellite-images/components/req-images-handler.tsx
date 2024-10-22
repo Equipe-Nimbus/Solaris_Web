@@ -8,12 +8,14 @@ import { SatelliteImage } from "@/types/types";
 import Link from "next/link";
 import { paths } from "@/routes/paths";
 import { LoadingCard } from "@/components/ui/loading";
+import { useNotifications } from "@/components/ui/notifications";
 
 const ReqImageHandler = () => {
 
     const [images, setImages] = useState<SatelliteImage[]>([]);
     const [isLoading, setIsLoading] = useState(false);
     const [hasSearched, setHasSearched] = useState(false);
+    const { addNotification } = useNotifications();
 
     async function handleSubmit(data: ReqImagesFormValues) {
         setIsLoading(true);
@@ -23,8 +25,13 @@ const ReqImageHandler = () => {
                 // console.log(response.data);
                 setImages(response.data.imagens);
             })
-            .catch((error) => {
-                console.log(error);
+            .catch((e) => {
+                addNotification({
+                    type: 'error',
+                    title: 'Erro ao buscar imagens',
+                    message: e.response?.data?.erro || ''
+                })
+                console.log(e);
             })
             .finally(() => {
                 setIsLoading(false);
