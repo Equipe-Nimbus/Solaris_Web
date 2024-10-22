@@ -34,14 +34,14 @@ const ImageModal = ({ cardOpen, setCardOpen, imagem, isImageVisible, setImageVis
             <ModalContent>
                 <div className="relative w-full h-96">
                     <Image
-                        src={imagem.link_thumbnail}
+                        src={imagem.thumbnail}
                         className={`w-full h-full object-contain ${getOpacityClass()}`}
                         width={300}
                         height={300}
                         alt="Imagem de satélite"
                     />
                     <Image
-                        src={imagem.link_preview_mascara}
+                        src={imagem.mascara}
                         className={`absolute top-0 left-0 w-full h-full object-contain ${isMaskVisible ? 'opacity-100' : 'opacity-0'}`}
                         width={300}
                         height={300}
@@ -62,7 +62,7 @@ const ImageModal = ({ cardOpen, setCardOpen, imagem, isImageVisible, setImageVis
                             <h2 className="text-base text-neutral-300 font-medium">Downloads</h2>
                             <div className="flex gap-6">
                                 <div className="flex gap-1 items-center">
-                                    <Link href={imagem.link_tiff} target="_blank" download>
+                                    <Link href={imagem.tiff} target="_blank" download>
                                         <DownloadSimple
                                             size={32}
                                             className="text-neutral-400 p-1 hover:bg-neutral-400/30 rounded duration-200 cursor-pointer"
@@ -71,7 +71,7 @@ const ImageModal = ({ cardOpen, setCardOpen, imagem, isImageVisible, setImageVis
                                     <span className="text-small font-semibold text-neutral-400">tiff</span>
                                 </div>
                                 <div className="flex gap-1 items-center">
-                                    <Link href={imagem.mascara_imagem} target="_blank" download>
+                                    <Link href={imagem.download_links} target="_blank" download>
                                         <DownloadSimple
                                             size={32}
                                             className="text-neutral-400 p-1 hover:bg-neutral-400/30 rounded duration-200 cursor-pointer"

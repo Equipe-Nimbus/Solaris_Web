@@ -17,7 +17,7 @@ const Header = () => {
     return (
         <>
 
-            <header className="flex items-center gap-5 fixed top-4 w-11/12 left-1/2 transform -translate-x-1/2 bg-neutral-800 px-6 py-3 border border-neutral-600 rounded-2xl text-small xl:max-w-[1280px]">
+            <header className="z-40 flex items-center gap-5 fixed top-4 w-11/12 left-1/2 transform -translate-x-1/2 bg-neutral-800 px-6 py-3 border border-neutral-600 rounded-2xl text-small xl:max-w-[1280px]">
                 <Image src="/logo.svg" alt="Logo" width={90} height={26} />
                 <List
                     className="sm:hidden ml-auto p-1 size-8 text-neutral-800 bg-neutral-100/90 rounded-lg cursor-pointer hover:bg-neutral-600/90 hover:text-neutral-300 transition-colors"

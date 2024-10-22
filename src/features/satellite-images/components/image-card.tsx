@@ -21,14 +21,14 @@ const ImageCard = ({ imagem }: ImageCardProps) => {
             <div className="relative w-full min-h-72 h-fit p-4 bg-neutral-700 border border-neutral-600 rounded-lg flex flex-col items-center">
                 <div className="relative w-full h-72 z-0">
                     <Image
-                        src={imagem.link_thumbnail}
+                        src={imagem.thumbnail}
                         className={`w-full h-full object-contain ${isMaskVisible ? 'opacity-70' : 'opacity-100'}`}
                         width={300}
                         height={300}
                         alt="Imagem de satélite"
                     />
                     <Image
-                        src={imagem.link_preview_mascara}
+                        src={imagem.mascara}
                         className={`absolute top-0 left-0 w-full h-full object-contain ${isMaskVisible ? 'opacity-100' : 'opacity-0'}`}
                         width={300}
                         height={300}

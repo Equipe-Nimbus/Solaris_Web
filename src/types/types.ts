@@ -4,11 +4,11 @@ export type BaseEntity = {
 }
 
 export type SatelliteImage = {
-    link_thumbnail: string;
-    link_tiff: string;
-    bbox_imagem: number[];
-    mascara_imagem: string;
-    link_preview_mascara: string;
+    thumbnail: string;
+    tiff: string;
+    bbox: number[];
+    mascara: string;
+    download_links: string;
 }
 
 export type User = {

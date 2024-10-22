@@ -1,4 +1,4 @@
-import { ImagesRequestList, SatelliteImage } from "@/types/types";
+import { ImagesRequestList } from "@/types/types";
 
 export const REQUESTS_MOCK: ImagesRequestList[] = [
     {
@@ -63,40 +63,40 @@ export const REQUEST_MOCK = {
     imagens: []
 }
 
-export const IMAGES_MOCK: SatelliteImage[] = [
-    {
-        link_thumbnail: "https://data.inpe.br/bdc/data/CB4A-WPM-PCA-FUSED/v001/197/123/2024/9/CBERS4A_WPM_PCA_RGB321_20240924_197_123.png",
-        link_tiff: "https://data.inpe.br/bdc/data/CB4A-WPM-PCA-FUSED/v001/197/123/2024/9/CBERS4A_WPM_PCA_RGB321_20240924_197_123.tif",
-        bbox_imagem: [-50.449219, -20.303418, -43.242188, -15.114553],
-        mascara_imagem:     "http://localhost:8080/download/CBERS4A_WPM_PCA_RGB321_20240924_197_123_OUT.svg",
-        link_preview_mascara: "http://localhost:8080/view/CBERS4A_WPM_PCA_RGB321_20240924_197_123_OUT.png"
-    },
-    {
-        link_thumbnail: "https://data.inpe.br/bdc/data/CB4A-WPM-PCA-FUSED/v001/197/123/2024/9/CBERS4A_WPM_PCA_RGB321_20240924_197_123.png",
-        link_tiff: "https://data.inpe.br/bdc/data/CB4A-WPM-PCA-FUSED/v001/197/123/2024/9/CBERS4A_WPM_PCA_RGB321_20240924_197_123.tif",
-        bbox_imagem: [-50.449219, -20.303418, -43.242188, -15.114553],
-        mascara_imagem: "http://localhost:8080/view/CBERS4A_WPM_PCA_RGB321_20240924_197_123_OUT.png",
-        link_preview_mascara: "http://localhost:8080/download/CBERS4A_WPM_PCA_RGB321_20240924_197_123_OUT.svg"
-    },
-    {
-        link_thumbnail: "https://data.inpe.br/bdc/data/CB4A-WPM-PCA-FUSED/v001/197/123/2024/9/CBERS4A_WPM_PCA_RGB321_20240924_197_123.png",
-        link_tiff: "https://data.inpe.br/bdc/data/CB4A-WPM-PCA-FUSED/v001/197/123/2024/9/CBERS4A_WPM_PCA_RGB321_20240924_197_123.tif",
-        bbox_imagem: [-50.449219, -20.303418, -43.242188, -15.114553],
-        mascara_imagem: "http://localhost:8080/view/CBERS4A_WPM_PCA_RGB321_20240924_197_123_OUT.png",
-        link_preview_mascara: "http://localhost:8080/download/CBERS4A_WPM_PCA_RGB321_20240924_197_123_OUT.svg"
-    },
-    {
-        link_thumbnail: "https://data.inpe.br/bdc/data/CB4A-WPM-PCA-FUSED/v001/197/123/2024/9/CBERS4A_WPM_PCA_RGB321_20240924_197_123.png",
-        link_tiff: "https://data.inpe.br/bdc/data/CB4A-WPM-PCA-FUSED/v001/197/123/2024/9/CBERS4A_WPM_PCA_RGB321_20240924_197_123.tif",
-        bbox_imagem: [-50.449219, -20.303418, -43.242188, -15.114553],
-        mascara_imagem: "http://localhost:8080/view/CBERS4A_WPM_PCA_RGB321_20240924_197_123_OUT.png",
-        link_preview_mascara: "http://localhost:8080/download/CBERS4A_WPM_PCA_RGB321_20240924_197_123_OUT.svg"
-    },
-    {
-        link_thumbnail: "https://data.inpe.br/bdc/data/CB4A-WPM-PCA-FUSED/v001/197/123/2024/9/CBERS4A_WPM_PCA_RGB321_20240924_197_123.png",
-        link_tiff: "https://data.inpe.br/bdc/data/CB4A-WPM-PCA-FUSED/v001/197/123/2024/9/CBERS4A_WPM_PCA_RGB321_20240924_197_123.tif",
-        bbox_imagem: [-50.449219, -20.303418, -43.242188, -15.114553],
-        mascara_imagem: "http://localhost:8080/view/CBERS4A_WPM_PCA_RGB321_20240924_197_123_OUT.png",
-        link_preview_mascara: "http://localhost:8080/download/CBERS4A_WPM_PCA_RGB321_20240924_197_123_OUT.svg"
-    }
-];
+// export const IMAGES_MOCK: SatelliteImage[] = [
+//     {
+//         thumbnail: "https://data.inpe.br/bdc/data/CB4A-WPM-PCA-FUSED/v001/197/123/2024/9/CBERS4A_WPM_PCA_RGB321_20240924_197_123.png",
+//         tiff: "https://data.inpe.br/bdc/data/CB4A-WPM-PCA-FUSED/v001/197/123/2024/9/CBERS4A_WPM_PCA_RGB321_20240924_197_123.tif",
+//         bbox: [-50.449219, -20.303418, -43.242188, -15.114553],
+//         mascara:     "http://localhost:8080/download/CBERS4A_WPM_PCA_RGB321_20240924_197_123_OUT.svg",
+//         link_preview_mascara: "http://localhost:8080/view/CBERS4A_WPM_PCA_RGB321_20240924_197_123_OUT.png"
+//     },
+//     {
+//         link_thumbnail: "https://data.inpe.br/bdc/data/CB4A-WPM-PCA-FUSED/v001/197/123/2024/9/CBERS4A_WPM_PCA_RGB321_20240924_197_123.png",
+//         link_tiff: "https://data.inpe.br/bdc/data/CB4A-WPM-PCA-FUSED/v001/197/123/2024/9/CBERS4A_WPM_PCA_RGB321_20240924_197_123.tif",
+//         bbox_imagem: [-50.449219, -20.303418, -43.242188, -15.114553],
+//         mascara_imagem: "http://localhost:8080/view/CBERS4A_WPM_PCA_RGB321_20240924_197_123_OUT.png",
+//         link_preview_mascara: "http://localhost:8080/download/CBERS4A_WPM_PCA_RGB321_20240924_197_123_OUT.svg"
+//     },
+//     {
+//         link_thumbnail: "https://data.inpe.br/bdc/data/CB4A-WPM-PCA-FUSED/v001/197/123/2024/9/CBERS4A_WPM_PCA_RGB321_20240924_197_123.png",
+//         link_tiff: "https://data.inpe.br/bdc/data/CB4A-WPM-PCA-FUSED/v001/197/123/2024/9/CBERS4A_WPM_PCA_RGB321_20240924_197_123.tif",
+//         bbox_imagem: [-50.449219, -20.303418, -43.242188, -15.114553],
+//         mascara_imagem: "http://localhost:8080/view/CBERS4A_WPM_PCA_RGB321_20240924_197_123_OUT.png",
+//         link_preview_mascara: "http://localhost:8080/download/CBERS4A_WPM_PCA_RGB321_20240924_197_123_OUT.svg"
+//     },
+//     {
+//         link_thumbnail: "https://data.inpe.br/bdc/data/CB4A-WPM-PCA-FUSED/v001/197/123/2024/9/CBERS4A_WPM_PCA_RGB321_20240924_197_123.png",
+//         link_tiff: "https://data.inpe.br/bdc/data/CB4A-WPM-PCA-FUSED/v001/197/123/2024/9/CBERS4A_WPM_PCA_RGB321_20240924_197_123.tif",
+//         bbox_imagem: [-50.449219, -20.303418, -43.242188, -15.114553],
+//         mascara_imagem: "http://localhost:8080/view/CBERS4A_WPM_PCA_RGB321_20240924_197_123_OUT.png",
+//         link_preview_mascara: "http://localhost:8080/download/CBERS4A_WPM_PCA_RGB321_20240924_197_123_OUT.svg"
+//     },
+//     {
+//         link_thumbnail: "https://data.inpe.br/bdc/data/CB4A-WPM-PCA-FUSED/v001/197/123/2024/9/CBERS4A_WPM_PCA_RGB321_20240924_197_123.png",
+//         link_tiff: "https://data.inpe.br/bdc/data/CB4A-WPM-PCA-FUSED/v001/197/123/2024/9/CBERS4A_WPM_PCA_RGB321_20240924_197_123.tif",
+//         bbox_imagem: [-50.449219, -20.303418, -43.242188, -15.114553],
+//         mascara_imagem: "http://localhost:8080/view/CBERS4A_WPM_PCA_RGB321_20240924_197_123_OUT.png",
+//         link_preview_mascara: "http://localhost:8080/download/CBERS4A_WPM_PCA_RGB321_20240924_197_123_OUT.svg"
+//     }
+// ];
