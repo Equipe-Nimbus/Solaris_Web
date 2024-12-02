@@ -55,7 +55,27 @@ const ImageModal = ({ cardOpen, setCardOpen, imagem, isImageVisible, setImageVis
                             <h2 className="text-base text-neutral-300 font-medium">Camadas</h2>
                             <div className="flex gap-6">
                                 <Checkbox checked={isImageVisible} onChange={() => setImageVisible(prev => !prev)} label="Original" />
-                                <Checkbox checked={isMaskVisible} onChange={() => setMaskVisible(prev => !prev)} label="Nuvem" />
+                                <Checkbox checked={isMaskVisible} onChange={() => setMaskVisible(prev => !prev)} label="Nuvens e Sombras" />
+                            </div>
+                        </div>
+                        <div className="flex flex-col gap-2">
+                            <h2 className="text-base text-neutral-300 font-medium">Informações</h2>
+                            <div className="flex flex-col gap-1">
+                                <span className="flex gap-1 text-small text-neutral-400">
+                                    <span className="text-neutral-300">Data da captura:</span> {imagem.data_imagem_criacao || 'N/A'}
+                                </span>
+                                <span className="flex gap-1 text-small text-neutral-400">
+                                    <span className="text-neutral-300">Área (bbox):</span> {imagem.bbox.toString() || 'N/A'}
+                                </span>
+                                <span className="flex gap-1 text-small text-neutral-400">
+                                    <span className="text-neutral-300">Cobertura de nuvens:</span> {imagem.estatistica_nuvem || 'N/A'}
+                                </span>
+                                <span className="flex gap-1 text-small text-neutral-400">
+                                    <span className="text-neutral-300">Cobertura de sombras de nuvem:</span> {imagem.estatistica_sombra || 'N/A'}
+                                </span>
+                                <span className="flex gap-1 text-small text-neutral-400">
+                                    <span className="text-neutral-300">Fundo:</span> {imagem.estatistica_fundo || 'N/A'}
+                                </span>
                             </div>
                         </div>
                         <div className="flex flex-col gap-1">
